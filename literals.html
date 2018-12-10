@@ -1,0 +1,30 @@
+<script>
+    var arr=['a', ,'c'];
+    document.write(arr);
+    console.log(arr);
+    var myList = ['home', , 'school', , ];
+    console.log(myList);
+
+    var myFalse=new Boolean(false);
+    var g=Boolean(myFalse);
+    var myString=new String('hello');
+    var s=Boolean(myString);
+    console.log(myFalse);
+    console.log(g);
+    console.log(myString);
+    console.log(s);
+
+    function carTypes(name) {
+        if (name === 'Honda') {
+            return name;
+        } else {
+            return "Sorry, we don't sell " + name + ".";
+        }
+    }
+
+    var car = { myCar: 'Saturn', getCar: carTypes('Honda'), special: 'sales' };
+    console.log(car);
+
+    
+
+</script>

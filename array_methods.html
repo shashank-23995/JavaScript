@@ -1,0 +1,45 @@
+<script>
+    var a = new Array(1, 2, 3, 4, 5);
+    var b = new Array('a', 'b', 'c', 'd', 'e');
+
+    console.log('array a=' + a);
+    console.log('array b=' + b);
+
+    concateArray = a.concat(b);
+    console.log(concateArray);
+
+    joinArray = a.join('-');
+    console.log('join array' + joinArray);
+
+    var c = new Array(1, 2, 3, 4, 5, 6);
+    c.push(7);
+    console.log(c);
+    c.pop();
+    console.log(c);
+    c.reverse()
+    console.log(c);
+    c.sort();
+    console.log(c);
+
+    var mixed = [1, 'a', 2, 'b', 3, 'c'];
+    var sep = mixed.filter(function (item) {
+        return typeof item === 'string';
+    })
+
+    console.log(sep);
+
+    var abc = 'abc';
+    console.log(typeof abc);
+
+    //multidimensional arrays
+
+    var a = new Array(4);
+    for (i = 0; i < 4; i++) {
+        a[i] = new Array(4);
+        for (j = 0; j < 4; j++) {
+            a[i][j] = '[' + i + ', ' + j + ']';
+        }
+    }
+
+    console.log(a);
+</script>

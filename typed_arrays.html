@@ -1,0 +1,9 @@
+<script>
+    var buffer=new ArrayBuffer(16);
+    console.log(buffer.byteLength);
+    var int32view=new Int32Array(buffer);
+    for(var i=0;i<int32view.length;i++){
+        int32view[i]=i*2;
+        console.log(int32view[i]);
+    }
+</script>

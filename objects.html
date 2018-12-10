@@ -1,0 +1,80 @@
+<script>
+    var myCar = new Object();
+    myCar.make = 'Ford';
+    myCar.model = 'Mustang';
+    myCar.year = 1969;
+
+    console.log(myCar);
+
+    console.log('using . operator');
+    console.log(myCar.make);
+    console.log(myCar.model);
+    console.log(myCar.year);
+
+    console.log('using brackets notation');
+    //console.log(myCar[make]);
+    //console.log(myCar[model]);
+    //console.log(myCar[year]);
+
+    var myObj = new Object(),
+        str = 'myString',
+        rand = Math.random(),
+        obj = new Object();
+
+    myObj.type = 'Dot syntax';
+    myObj['date created'] = 'String with space';
+    myObj[str] = 'String value';
+    myObj[rand] = 'Random Number';
+    myObj[obj] = 'Object';
+    myObj[''] = 'Even an empty string';
+
+    console.log(myObj);
+
+    //using for..in loop
+    for (const i in myCar) {
+        console.log(myCar[i]);
+    }
+
+    //listing keys
+    console.log(Object.keys(myCar));
+    console.log(Object.getOwnPropertyNames(myCar));
+
+    function listAllProperties(o) {
+        var objectToInspect;
+        var result = [];
+
+        for (objectToInspect = o; objectToInspect !== null;
+            objectToInspect = Object.getPrototypeOf(objectToInspect)) {
+            result = result.concat(
+                Object.getOwnPropertyNames(objectToInspect)
+            );
+        }
+
+        return result;
+    }
+
+    //documet.write(listAllProperties(myCar));
+    console.log('listing all properties of object');
+    console.log(listAllProperties(myCar));
+    console.log(Object.getPrototypeOf(myCar));
+
+    var obj1={k1:'value1',k2:'value2',k3:'value3'};
+    console.log(obj1);
+
+
+    var o={
+        a:7,
+        get b(){
+            return this.a+1;
+        },
+
+        set c(x){
+            this.c=(x/2);
+        }
+    };  
+    console.log(o.a);
+    console.log(o.b);
+    o.c=12;
+    console.log(o.c);
+
+</script>

@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>promise chaining</title>
+    </head>
+    <body>
+        <script>
+            let promise1=function(user,pass){
+                return new Promise(function(resolve,reject){
+                    let validInfo=user!==undefined && pass!==undefined
+                    if(validInfo){
+                        resolve();
+                    } else {
+                        reject();
+                    }
+                })
+            }
+
+            let promise2=function(){
+                return new Promise(function(resolve,reject){
+                    let userType;
+                    if(user=="admin"){
+                        userType="admin";
+                    }else{
+                        userType="standard user";
+                    }
+    
+                    if(userType=="admin"){
+                        resolve();
+                    }else{
+                        reject();
+                    }
+                })
+            }
+
+            console.log("this is before promise1");
+            promise1("admin",1234).then(
+                function(){
+                    console.log("login successful");
+                    return Promise;
+                },
+                function(){
+                    console.log("values should not be empty");
+                }
+            ).then(
+                function(){
+                    console.log("admin login");
+                },
+                function(){
+                    console.log("standard user login");
+                }
+            )
+            console.log("this is after promise1");
+        </script>
+    </body>
+</html>
